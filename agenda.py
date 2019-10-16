@@ -37,10 +37,21 @@ def incluir_editar_contato(contato, telefone, email, endereco):
 
 def excluir_contato(contato):
     AGENDA.pop(contato)
-    print("Contato: {} Exluido!".format(contato))
+    print('Contato: {} Excluído!'.format(contato))
 
+def menu():
+    print('1 - Exibir agenda')
+    print('2 - Buscar contato')
+    print('3 - Incluir contato')
+    print('4 - Editar contato')
+    print('5 - Excluir contato')
+    print('6 - Sair')
+
+menu()
+
+opcao = input('Escolha uma opção: ')
 
 # exibir_agenda()
 # buscar_contato('Sheyla')
 # incluir_editar_contato('Carlota', '98888-7888', 'carlotajoaq@teste.com', 'Mangueiral, 3443')
-excluir_contato('Sheyla')
+# excluir_contato('Sheyla')
