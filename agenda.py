@@ -1,9 +1,12 @@
 AGENDA = {}
 
 def exibir_agenda():
-    for contato in AGENDA:
-        buscar_contato(contato)
-        print('====================================\n')
+    if AGENDA:
+        for contato in AGENDA:
+            buscar_contato(contato)
+            print('====================================\n')
+    else:
+        print('Agenda vazia!\n')
 
 def buscar_contato(contato):
     print('Nome: ', contato )
@@ -100,7 +103,7 @@ while True:
     if opcao == '1':
         exibir_agenda()
     elif opcao == '2':
-        contato=input('Qual o nome do contato que deseja buscar?')
+        contato=input('Qual o nome do contato que deseja buscar? ')
         buscar_contato(contato)
     elif opcao == '3':
         contato=input('Digite o nome do contato que deseja incluir: ')
@@ -111,7 +114,7 @@ while True:
             telefone, email, endereco = ler_detalhes_contato()# leio cada variável e retorno em suas respectivas variáveis
             incluir_editar_contato(contato, telefone, email, endereco)
     elif opcao == '4':
-        contato=input('Digite o nome do contato')
+        contato=input('Digite o nome do contato: ')
         try:
             AGENDA[contato]
             telefone, email, endereco = ler_detalhes_contato()  # leio cada variável e retorno em suas respectivas variáveis
@@ -119,13 +122,13 @@ while True:
         except:
             print('Contato inexistente \n')
     elif opcao == '5':
-        contato=input('Qual contato que deseja excluir?')
+        contato=input('Qual contato que deseja excluir? ')
         excluir_contato(contato)
     elif opcao == '6':
-        arquivo = input("Digite o nome do arquivo a ser Exportado")
+        arquivo = input("Qual o nome do arquivo a ser Exportado? ")
         exportar_contatos(arquivo)
     elif opcao == '7':
-        arquivo=input("Digite o nome do arquivo a ser importado")
+        arquivo=input("Qual o nome do arquivo a ser importado? ")
         importar_contatos(arquivo)
 
     elif opcao == '0':
